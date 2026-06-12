@@ -3,8 +3,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Мой сайт</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></p>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet"></p>
 <p><style>
 body {
   margin: 0;
@@ -12,26 +11,18 @@ body {
   background: #0f172a;
   color: white;
 }</p>
+<p>.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}</p>
+<p>.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}</p>
 <p>header {
-  background: url(&rsquo;<a href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f'">https://images.unsplash.com/photo-1522202176988-66273c2fd55f&rsquo;</a>) center/cover no-repeat;
   text-align: center;
   padding: 120px 20px;
-}</p>
-<p>header h1 {
-  font-size: 48px;
-}</p>
-<p>header p {
-  max-width: 600px;
-  margin: auto;
-}</p>
-<p>.button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 30px;
-  background: #22c55e;
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
 }</p>
 <p>.section {
   padding: 80px 20px;
@@ -49,57 +40,51 @@ body {
   border-radius: 15px;
   width: 260px;
 }</p>
-<p>.card i {
-  font-size: 40px;
-  margin-bottom: 15px;
-  color: #22c55e;
-}</p>
-<p>.about-img {
-  width: 200px;
-  border-radius: 15px;
+<p>.button {
+  display: inline-block;
   margin-top: 20px;
-}</p>
-<p>footer {
-  text-align: center;
-  padding: 30px;
-  opacity: 0.5;
+  padding: 12px 25px;
+  background: #22c55e;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
 }
 </style>
 </head></p>
 <p><body></p>
-<header>
+<header class="animate">
 <h1>Создаю современные сайты</h1>
-<p>Красиво, быстро и под задачи бизнеса</p>
+<p>Красиво и быстро</p>
 <a class="button" href="#contact">Связаться</a>
 </header>
-<section class="section">
+<section class="section animate">
 <h2>Обо мне</h2>
-<p>Я создаю стильные сайты, которые помогают привлекать клиентов</p>
-<img class="about-img" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe">
+<p>Делаю сайты, которые привлекают клиентов</p>
 </section>
-<section class="section">
+<section class="section animate">
 <h2>Услуги</h2>
 <div class="cards">
-<div class="card">
-<i class="fas fa-laptop-code"></i>
-<p>Лендинг под ключ</p>
-</div>
-<div class="card">
-<i class="fas fa-mobile-alt"></i>
-<p>Сайт-визитка</p>
-</div>
-<div class="card">
-<i class="fas fa-rocket"></i>
-<p>Редизайн сайта</p>
-</div>
+<div class="card">Лендинг</div>
+<div class="card">Сайт-визитка</div>
+<div class="card">Редизайн</div>
 </div>
 </section>
-<section class="section" id="contact">
+<section class="section animate" id="contact">
 <h2>Контакты</h2>
-<p><i class="fab fa-telegram"></i> @yourname</p>
+<p>Telegram: @yourname</p>
 </section>
-<footer>
-<p>© 2026 Все права защищены</p>
-</footer>
+<script>
+const elements = document.querySelectorAll('.animate');
+function showOnScroll() {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      el.classList.add('show');
+    }
+  });
+}
+window.addEventListener('scroll', showOnScroll);
+window.addEventListener('load', showOnScroll);
+</script>
 <p></body>
 </html>
