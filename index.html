@@ -12,10 +12,18 @@ body {
   color: white;
   overflow-x: hidden;
 }</p>
+<p>header, .section, footer {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}</p>
+<p>.show {
+  opacity: 1;
+  transform: translateY(0);
+}</p>
 <p>header {
   text-align: center;
   padding: 120px 20px;
-  animation: fadeIn 1.5s ease;
 }</p>
 <p>h1 {
   font-size: 48px;
@@ -58,12 +66,6 @@ body {
   border-radius: 15px;
   width: 260px;
   transition: 0.4s;
-  opacity: 0;
-  transform: translateY(40px);
-}</p>
-<p>.card.show {
-  opacity: 1;
-  transform: translateY(0);
 }</p>
 <p>.card:hover {
   transform: translateY(-10px) scale(1.03);
@@ -72,24 +74,20 @@ body {
   text-align: center;
   padding: 30px;
   opacity: 0.5;
-}</p>
-<p>@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head></p>
 <p><body></p>
-<header>
+<header class="animate">
 <h1>Создаю современные сайты</h1>
 <p>Быстро, красиво и под задачи бизнеса</p>
 <a class="button" href="#contact">Связаться</a>
 </header>
-<section class="section">
+<section class="section animate">
 <h2>Обо мне</h2>
-<p>Я создаю стильные и быстрые сайты, которые помогают привлекать клиентов и выглядеть профессионально</p>
+<p>Я создаю стильные и быстрые сайты, которые помогают привлекать клиентов</p>
 </section>
-<section class="section">
+<section class="section animate">
 <h2>Услуги</h2>
 <div class="cards">
 <div class="card">Лендинг под ключ</div>
@@ -97,23 +95,25 @@ body {
 <div class="card">Редизайн сайта</div>
 </div>
 </section>
-<section class="section" id="contact">
+<section class="section animate" id="contact">
 <h2>Контакты</h2>
-<p>Напиши мне: Telegram @yourname</p>
+<p>Telegram: @yourname</p>
 </section>
-<footer>
+<footer class="animate">
 <p>© 2026 Все права защищены</p>
 </footer>
 <script>
-const cards = document.querySelectorAll('.card');
-window.addEventListener('scroll', () => {
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
-      card.classList.add('show');
+const elements = document.querySelectorAll('.animate');
+function checkScroll() {
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('show');
     }
   });
-});
+}
+window.addEventListener('scroll', checkScroll);
+window.addEventListener('load', checkScroll);
 </script>
 <p></body>
 </html>
