@@ -117,3 +117,13 @@ window.addEventListener('load', checkScroll);
 </script>
 <p></body>
 </html>
+<script>
+const elements = document.querySelectorAll('.animate');
+function checkScroll() {
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('show');
+window.addEventListener('scroll', checkScroll);
+window.addEventListener('load', checkScroll);
+</script>
