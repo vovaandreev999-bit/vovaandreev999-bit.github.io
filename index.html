@@ -1,0 +1,119 @@
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мой сайт</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet"></p>
+<p><style>
+body {
+  margin: 0;
+  font-family: &lsquo;Inter&rsquo;, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  overflow-x: hidden;
+}</p>
+<p>header {
+  text-align: center;
+  padding: 120px 20px;
+  animation: fadeIn 1.5s ease;
+}</p>
+<p>h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}</p>
+<p>p {
+  opacity: 0.8;
+  max-width: 600px;
+  margin: auto;
+}</p>
+<p>.button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 30px;
+  background: linear-gradient(45deg, #22c55e, #4ade80);
+  color: #022c22;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}</p>
+<p>.button:hover {
+  transform: scale(1.1);
+}</p>
+<p>.section {
+  padding: 80px 20px;
+  text-align: center;
+}</p>
+<p>.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}</p>
+<p>.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  width: 260px;
+  transition: 0.4s;
+  opacity: 0;
+  transform: translateY(40px);
+}</p>
+<p>.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}</p>
+<p>.card:hover {
+  transform: translateY(-10px) scale(1.03);
+}</p>
+<p>footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.5;
+}</p>
+<p>@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head></p>
+<p><body></p>
+<header>
+<h1>Создаю современные сайты</h1>
+<p>Быстро, красиво и под задачи бизнеса</p>
+<a class="button" href="#contact">Связаться</a>
+</header>
+<section class="section">
+<h2>Обо мне</h2>
+<p>Я создаю стильные и быстрые сайты, которые помогают привлекать клиентов и выглядеть профессионально</p>
+</section>
+<section class="section">
+<h2>Услуги</h2>
+<div class="cards">
+<div class="card">Лендинг под ключ</div>
+<div class="card">Сайт-визитка</div>
+<div class="card">Редизайн сайта</div>
+</div>
+</section>
+<section class="section" id="contact">
+<h2>Контакты</h2>
+<p>Напиши мне: Telegram @yourname</p>
+</section>
+<footer>
+<p>© 2026 Все права защищены</p>
+</footer>
+<script>
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      card.classList.add('show');
+    }
+  });
+});
+</script>
+<p></body>
+</html>
