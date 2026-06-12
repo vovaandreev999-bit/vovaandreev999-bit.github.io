@@ -3,34 +3,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Мой сайт</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet"></p>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></p>
 <p><style>
 body {
   margin: 0;
   font-family: &lsquo;Inter&rsquo;, sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: #0f172a;
   color: white;
-  overflow-x: hidden;
-}</p>
-<p>header, .section, footer {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}</p>
-<p>.show {
-  opacity: 1;
-  transform: translateY(0);
 }</p>
 <p>header {
+  background: url(&rsquo;<a href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f'">https://images.unsplash.com/photo-1522202176988-66273c2fd55f&rsquo;</a>) center/cover no-repeat;
   text-align: center;
   padding: 120px 20px;
 }</p>
-<p>h1 {
+<p>header h1 {
   font-size: 48px;
-  margin-bottom: 10px;
 }</p>
-<p>p {
-  opacity: 0.8;
+<p>header p {
   max-width: 600px;
   margin: auto;
 }</p>
@@ -38,15 +28,10 @@ body {
   display: inline-block;
   margin-top: 25px;
   padding: 14px 30px;
-  background: linear-gradient(45deg, #22c55e, #4ade80);
-  color: #022c22;
+  background: #22c55e;
+  color: white;
   text-decoration: none;
   border-radius: 10px;
-  font-weight: 600;
-  transition: 0.3s;
-}</p>
-<p>.button:hover {
-  transform: scale(1.1);
 }</p>
 <p>.section {
   padding: 80px 20px;
@@ -57,18 +42,22 @@ body {
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 40px;
 }</p>
 <p>.card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
+  background: #1e293b;
   padding: 25px;
   border-radius: 15px;
   width: 260px;
-  transition: 0.4s;
 }</p>
-<p>.card:hover {
-  transform: translateY(-10px) scale(1.03);
+<p>.card i {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #22c55e;
+}</p>
+<p>.about-img {
+  width: 200px;
+  border-radius: 15px;
+  margin-top: 20px;
 }</p>
 <p>footer {
   text-align: center;
@@ -78,52 +67,39 @@ body {
 </style>
 </head></p>
 <p><body></p>
-<header class="animate">
+<header>
 <h1>Создаю современные сайты</h1>
-<p>Быстро, красиво и под задачи бизнеса</p>
+<p>Красиво, быстро и под задачи бизнеса</p>
 <a class="button" href="#contact">Связаться</a>
 </header>
-<section class="section animate">
+<section class="section">
 <h2>Обо мне</h2>
-<p>Я создаю стильные и быстрые сайты, которые помогают привлекать клиентов</p>
+<p>Я создаю стильные сайты, которые помогают привлекать клиентов</p>
+<img class="about-img" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe">
 </section>
-<section class="section animate">
+<section class="section">
 <h2>Услуги</h2>
 <div class="cards">
-<div class="card">Лендинг под ключ</div>
-<div class="card">Сайт-визитка</div>
-<div class="card">Редизайн сайта</div>
+<div class="card">
+<i class="fas fa-laptop-code"></i>
+<p>Лендинг под ключ</p>
+</div>
+<div class="card">
+<i class="fas fa-mobile-alt"></i>
+<p>Сайт-визитка</p>
+</div>
+<div class="card">
+<i class="fas fa-rocket"></i>
+<p>Редизайн сайта</p>
+</div>
 </div>
 </section>
-<section class="section animate" id="contact">
+<section class="section" id="contact">
 <h2>Контакты</h2>
-<p>Telegram: @yourname</p>
+<p><i class="fab fa-telegram"></i> @yourname</p>
 </section>
-<footer class="animate">
+<footer>
 <p>© 2026 Все права защищены</p>
 </footer>
-<script>
-const elements = document.querySelectorAll('.animate');
-function checkScroll() {
-  elements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      el.classList.add('show');
-    }
-  });
-}
-window.addEventListener('scroll', checkScroll);
-window.addEventListener('load', checkScroll);
-</script>
 <p></body>
 </html>
-<script>
-const elements = document.querySelectorAll('.animate');
-function checkScroll() {
-  elements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      el.classList.add('show');
-window.addEventListener('scroll', checkScroll);
-window.addEventListener('load', checkScroll);
-</script>
